@@ -5,19 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2424f3f2-3b62-4e90-8d56-f2492f85d005" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../addressbook-web-tests1/GroupCreationTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/aws.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlobalUsings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests1/GlobalUsings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests1/UnitTest1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests1/addressbook-web-tests1.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addressbook-web-tests.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests1/global.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/aws.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests1/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests1/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests1/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/aws.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests1/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.addressbook-web-tests1/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/.idea/.idea.addressbook-web-tests1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/GlobalUsings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GlobalUsings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/GroupCreationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GroupCreationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTest1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/addressbook-web-tests1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/addressbook-web-tests1.sln" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook-web-tests1.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests1/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,46 +33,48 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "pearlflop"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;pearlflop&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/pearlflop/charp_training.git",
-    "accountId": "134faffd-39a1-4285-a76c-5d6869d37038"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/pearlflop/charp_training.git&quot;,
+    &quot;accountId&quot;: &quot;134faffd-39a1-4285-a76c-5d6869d37038&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GroupCreationTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2vUm8iXWbNfPGFpbTPw2Lt78LwN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "ef8ca0fe-ca1c-40ba-b533-c3ab37136b27.executor": "Debug",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;ef8ca0fe-ca1c-40ba-b533-c3ab37136b27.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,7 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1743944275679</updated>
       <workItem from="1743944282932" duration="715000" />
-      <workItem from="1744207870136" duration="2716000" />
+      <workItem from="1744207870136" duration="3987000" />
+      <workItem from="1744211990245" duration="4000" />
     </task>
     <servers />
   </component>
