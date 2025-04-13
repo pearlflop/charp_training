@@ -58,13 +58,12 @@ namespace WebAddressBookTests
 
         private void ReturnToGroupsPage()
         {
-            driver.FindElement(By.LinkText("Logout")).Click();
+            driver.FindElement(By.LinkText("group page")).Click();
         }
 
         private void SubmitGroupCreation()
         {
             driver.FindElement(By.Name("submit")).Click();
-            driver.FindElement(By.LinkText("group page")).Click();
         }
 
         private void FillGroupsForm(GroupData group)
