@@ -1,4 +1,3 @@
-using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -12,6 +11,7 @@ public class ApplicationManager
     protected LoginHelper loginHelper;
     protected NavigationHelper navigation;
     protected GroupHelper groupHelper;
+    protected ContactHelper contactHelper;
 
     public ApplicationManager()
     {
@@ -21,6 +21,7 @@ public class ApplicationManager
         loginHelper = new LoginHelper(this);
         navigation = new NavigationHelper(this, baseURL);
         groupHelper = new GroupHelper(this);
+        contactHelper = new ContactHelper(this);
     }
 
     public IWebDriver Driver
@@ -53,5 +54,11 @@ public class ApplicationManager
     public GroupHelper Groups
     {
         get { return groupHelper; }
+    }
+
+    public ContactHelper Contact
+
+    {
+        get { return contactHelper; }
     }
 }

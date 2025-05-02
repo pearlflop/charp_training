@@ -20,4 +20,9 @@ public class NavigationHelper : HelperBase
     {
         driver.FindElement(By.LinkText("groups")).Click();
     }
+
+    public void GoToContactPage()
+    {
+        driver.FindElement(By.LinkText("add new")).Click();
+    }
 }

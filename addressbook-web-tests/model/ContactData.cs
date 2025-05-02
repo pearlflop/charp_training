@@ -1,4 +1,4 @@
-namespace addressbook_web_tests;
+namespace WebAddressBookTests;
 
 public class ContactData
 {

@@ -1,5 +1,4 @@
 using OpenQA.Selenium;
-using WebAddressBookTests;
 
 namespace WebAddressBookTests;
 
@@ -19,11 +18,11 @@ public class GroupHelper : HelperBase
         ReturnToGroupsPage();
         return this;
     }
-    
+
     public GroupHelper Modify(int i, GroupData newData)
     {
         manager.Navigation.GoToGroupsPage();
-        SelectGroup(i);
+         SelectGroup(i);
         initGroupModification();
         FillGroupsForm(newData);
         SubmitGroupModification();
@@ -84,7 +83,7 @@ public class GroupHelper : HelperBase
         driver.FindElement(By.Name("delete")).Click();
         return this;
     }
-    
+
     private GroupHelper SubmitGroupModification()
     {
         driver.FindElement(By.Name("update")).Click();
