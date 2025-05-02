@@ -25,4 +25,14 @@ public class NavigationHelper : HelperBase
     {
         driver.FindElement(By.LinkText("add new")).Click();
     }
+
+    public void GoToHomePage()
+    {
+        driver.FindElement(By.LinkText("home")).Click();
+    }
+
+    public void GoToEditContactPage(int index)
+    {
+        driver.Navigate().GoToUrl("http://localhost/addressbook/edit.php?id=" + index + "");
+    }
 }

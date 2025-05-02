@@ -22,7 +22,7 @@ public class GroupHelper : HelperBase
     public GroupHelper Modify(int i, GroupData newData)
     {
         manager.Navigation.GoToGroupsPage();
-         SelectGroup(i);
+        SelectGroup(i);
         initGroupModification();
         FillGroupsForm(newData);
         SubmitGroupModification();

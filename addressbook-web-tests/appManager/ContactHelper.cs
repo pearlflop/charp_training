@@ -18,6 +18,25 @@ public class ContactHelper : HelperBase
         return this;
     }
 
+    public ContactHelper Remove(int i)
+    {
+        manager.Navigation.GoToHomePage();
+        SelectContact(i);
+        RemoveContact();
+        ReturnToHomePage();
+        return this;
+    }
+
+    public ContactHelper Modify(int i, ContactData newData)
+    {
+        manager.Navigation.GoToHomePage();
+        manager.Navigation.GoToEditContactPage(i);
+        FillContactForm(newData);
+        SubmitContactModification();
+        ReturnToHomePage();
+        return this;
+    }
+
     private ContactHelper ReturnToHomePage()
     {
         driver.FindElement(By.LinkText("home")).Click();
@@ -40,6 +59,24 @@ public class ContactHelper : HelperBase
         driver.FindElement(By.Name("lastname")).Click();
         driver.FindElement(By.Name("lastname")).Clear();
         driver.FindElement(By.Name("lastname")).SendKeys(contact.LastName);
+        return this;
+    }
+
+    private ContactHelper SelectContact(int index)
+    {
+        driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + index + "]")).Click();
+        return this;
+    }
+
+    private ContactHelper RemoveContact()
+    {
+        driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+        return this;
+    }
+
+    private ContactHelper SubmitContactModification()
+    {
+        driver.FindElement(By.Name("update")).Click();
         return this;
     }
 }
