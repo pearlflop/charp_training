@@ -1,20 +1,13 @@
-namespace WebAddressBookTests;
-
-public class TestBase
+namespace WebAddressBookTests
 {
-    protected ApplicationManager app;
-
-    [SetUp]
-    public void SetupTest()
+    public class TestBase
     {
-        app = new ApplicationManager();
-        app.Navigation.OpenHomePage();
-        app.Auth.Login(new AccountData("admin", "secret"));
-    }
+        protected ApplicationManager app;
 
-    [TearDown]
-    public void TeardownTest()
-    {
-        app.Stop();
+        [OneTimeSetUp]
+        public void SetupApplicationManager()
+        {
+            app = ApplicationManager.GetInstance();
+        }
     }
 }

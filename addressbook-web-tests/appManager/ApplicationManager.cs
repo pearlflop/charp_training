@@ -12,8 +12,9 @@ public class ApplicationManager
     protected NavigationHelper navigation;
     protected GroupHelper groupHelper;
     protected ContactHelper contactHelper;
+    private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
-    public ApplicationManager()
+    private ApplicationManager()
     {
         driver = new ChromeDriver();
         baseURL = "http://localhost";
@@ -24,12 +25,7 @@ public class ApplicationManager
         contactHelper = new ContactHelper(this);
     }
 
-    public IWebDriver Driver
-    {
-        get { return driver; }
-    }
-
-    public void Stop()
+    ~ApplicationManager()
     {
         try
         {
@@ -39,6 +35,23 @@ public class ApplicationManager
         {
             // Ignore errors if unable to close the browser
         }
+    }
+
+    public static ApplicationManager GetInstance()
+    {
+        if (!app.IsValueCreated)
+        {
+            ApplicationManager newInstance = new ApplicationManager();
+            newInstance.Navigation.OpenHomePage();
+            app.Value = newInstance;
+        }
+
+        return app.Value;
+    }
+
+    public IWebDriver Driver
+    {
+        get { return driver; }
     }
 
     public LoginHelper Auth
