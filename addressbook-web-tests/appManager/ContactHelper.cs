@@ -18,19 +18,19 @@ public class ContactHelper : HelperBase
         return this;
     }
 
-    public ContactHelper Remove(int i)
+    public ContactHelper Remove(int i, ContactData contact)
     {
         manager.Navigation.GoToHomePage();
-        SelectContact(i);
+        SelectContact(i, contact);
         RemoveContact();
         ReturnToHomePage();
         return this;
     }
 
-    public ContactHelper Modify(int i, ContactData newData)
+    public ContactHelper Modify(int i, ContactData newData, ContactData contact)
     {
         manager.Navigation.GoToHomePage();
-        manager.Navigation.GoToEditContactPage(i);
+        EditContactPage(i, contact);
         FillContactForm(newData);
         SubmitContactModification();
         ReturnToHomePage();
@@ -53,17 +53,17 @@ public class ContactHelper : HelperBase
 
     private ContactHelper FillContactForm(ContactData contact)
     {
-        driver.FindElement(By.Name("firstname")).Click();
-        driver.FindElement(By.Name("firstname")).Clear();
-        driver.FindElement(By.Name("firstname")).SendKeys(contact.FirstName);
-        driver.FindElement(By.Name("lastname")).Click();
-        driver.FindElement(By.Name("lastname")).Clear();
-        driver.FindElement(By.Name("lastname")).SendKeys(contact.LastName);
+        Type(By.Name("firstname"), contact.FirstName);
+        Type(By.Name("lastname"), contact.LastName);
         return this;
     }
 
-    private ContactHelper SelectContact(int index)
+    private ContactHelper SelectContact(int index, ContactData contact)
     {
+        if (IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + index + "]")) == false)
+        {
+            Create(contact);
+        }
         driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + index + "]")).Click();
         return this;
     }
@@ -77,6 +77,16 @@ public class ContactHelper : HelperBase
     private ContactHelper SubmitContactModification()
     {
         driver.FindElement(By.Name("update")).Click();
+        return this;
+    }
+
+    public ContactHelper EditContactPage(int index, ContactData contact)
+    {
+        if (IsElementPresent(By.Name("edit" + index)))
+        {
+            Create(contact);
+        }
+        driver.Navigate().GoToUrl("http://localhost/addressbook/edit.php?id=" + index + "");
         return this;
     }
 }

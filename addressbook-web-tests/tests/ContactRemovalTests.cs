@@ -1,11 +1,12 @@
 namespace WebAddressBookTests;
 
 [TestFixture]
-public class ContactRemovalTests : TestBase
+public class ContactRemovalTests : AuthTestBase
 {
     [Test]
     public void ContactRemovalTest()
     {
-        app.Contact.Remove(1);
+        ContactData contact = new ContactData("aa", "cc");
+        app.Contact.Remove(1, contact);
     }
 }
