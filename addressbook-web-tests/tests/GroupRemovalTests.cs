@@ -1,3 +1,5 @@
+using OpenQA.Selenium;
+
 namespace WebAddressBookTests
 {
     [TestFixture]
@@ -9,7 +11,15 @@ namespace WebAddressBookTests
             GroupData Data = new GroupData("tt");
             Data.Header = null;
             Data.Footer = null;
-            app.Groups.Remove(1, Data);
+            var i = 1;
+
+            app.Navigation.GoToGroupsPage();
+            if (app.Navigation.IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
+            {
+                app.Groups.Create(Data);
+            }
+
+            app.Groups.Remove(i);
         }
     }
 }

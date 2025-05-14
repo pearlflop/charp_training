@@ -14,43 +14,24 @@ public class ContactHelper : HelperBase
 
         FillContactForm(contact);
         SubmitContactCreation();
-        ReturnToHomePage();
+        manager.Navigation.GoToHomePage();
         return this;
     }
 
-    public ContactHelper Remove(int i, ContactData contact)
+    public ContactHelper Remove(int i)
     {
-        manager.Navigation.GoToHomePage();
-        if (IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
-        {
-            Create(contact);
-        }
-
-        SelectContact(i, contact);
+        SelectContact(i);
         RemoveContact();
-        ReturnToHomePage();
+        manager.Navigation.GoToHomePage();
         return this;
     }
 
-    public ContactHelper Modify(int i, ContactData newData, ContactData contact)
+    public ContactHelper Modify(int i, ContactData newData)
     {
-        manager.Navigation.GoToHomePage();
-        if (IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
-        {
-            Create(contact);
-        }
-
         EditContactPage(i);
         FillContactForm(newData);
         SubmitContactModification();
-        ReturnToHomePage();
-        return this;
-    }
-
-    private ContactHelper ReturnToHomePage()
-    {
-        driver.FindElement(By.LinkText("home")).Click();
-        driver.Navigate().GoToUrl("http://localhost/addressbook/");
+        manager.Navigation.GoToHomePage();
         return this;
     }
 
@@ -68,7 +49,7 @@ public class ContactHelper : HelperBase
         return this;
     }
 
-    private ContactHelper SelectContact(int index, ContactData contact)
+    private ContactHelper SelectContact(int index)
     {
         driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + index + "]")).Click();
         return this;

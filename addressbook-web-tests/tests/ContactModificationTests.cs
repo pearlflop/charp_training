@@ -1,3 +1,5 @@
+using OpenQA.Selenium;
+
 namespace WebAddressBookTests
 {
     [TestFixture]
@@ -8,7 +10,16 @@ namespace WebAddressBookTests
         {
             ContactData newData = new ContactData("qq", "bb");
             ContactData contact = new ContactData("aa", "cc");
-            app.Contact.Modify(1, newData, contact);
+            var i = 1;
+
+            app.Navigation.GoToHomePage();
+            if (app.Contact.IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
+
+            {
+                app.Contact.Create(contact);
+            }
+
+            app.Contact.Modify(i, newData);
         }
     }
 }

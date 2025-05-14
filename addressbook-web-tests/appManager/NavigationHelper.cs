@@ -39,5 +39,6 @@ public class NavigationHelper : HelperBase
     public void GoToHomePage()
     {
         driver.FindElement(By.LinkText("home")).Click();
+        driver.Navigate().GoToUrl("http://localhost/addressbook/");
     }
 }

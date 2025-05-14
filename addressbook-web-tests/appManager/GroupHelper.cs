@@ -19,14 +19,8 @@ public class GroupHelper : HelperBase
         return this;
     }
 
-    public GroupHelper Modify(int i, GroupData newData, GroupData Data)
+    public GroupHelper Modify(int i, GroupData newData)
     {
-        manager.Navigation.GoToGroupsPage();
-        if (IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
-        {
-            Create(Data);
-        }
-
         SelectGroup(i);
         initGroupModification();
         FillGroupsForm(newData);
@@ -35,14 +29,8 @@ public class GroupHelper : HelperBase
         return this;
     }
 
-    public GroupHelper Remove(int i, GroupData Data)
+    public GroupHelper Remove(int i)
     {
-        manager.Navigation.GoToGroupsPage();
-        if (IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
-        {
-            Create(Data);
-        }
-
         SelectGroup(i);
         RemoveGroup();
         ReturnToGroupsPage();
