@@ -12,7 +12,7 @@ public class HelperBase
         this.manager = manager;
         driver = manager.Driver;
     }
-    
+
     public void Type(By locator, string text)
     {
         if (text != null)
@@ -22,7 +22,7 @@ public class HelperBase
             driver.FindElement(locator).SendKeys(text);
         }
     }
-    
+
     public bool IsElementPresent(By by)
     {
         try

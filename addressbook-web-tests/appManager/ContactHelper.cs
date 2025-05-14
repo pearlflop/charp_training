@@ -21,6 +21,11 @@ public class ContactHelper : HelperBase
     public ContactHelper Remove(int i, ContactData contact)
     {
         manager.Navigation.GoToHomePage();
+        if (IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
+        {
+            Create(contact);
+        }
+
         SelectContact(i, contact);
         RemoveContact();
         ReturnToHomePage();
@@ -30,7 +35,12 @@ public class ContactHelper : HelperBase
     public ContactHelper Modify(int i, ContactData newData, ContactData contact)
     {
         manager.Navigation.GoToHomePage();
-        EditContactPage(i, contact);
+        if (IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
+        {
+            Create(contact);
+        }
+
+        EditContactPage(i);
         FillContactForm(newData);
         SubmitContactModification();
         ReturnToHomePage();
@@ -60,10 +70,6 @@ public class ContactHelper : HelperBase
 
     private ContactHelper SelectContact(int index, ContactData contact)
     {
-        if (IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + index + "]")) == false)
-        {
-            Create(contact);
-        }
         driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + index + "]")).Click();
         return this;
     }
@@ -80,12 +86,8 @@ public class ContactHelper : HelperBase
         return this;
     }
 
-    public ContactHelper EditContactPage(int index, ContactData contact)
+    public ContactHelper EditContactPage(int index)
     {
-        if (IsElementPresent(By.Name("edit" + index)))
-        {
-            Create(contact);
-        }
         driver.Navigate().GoToUrl("http://localhost/addressbook/edit.php?id=" + index + "");
         return this;
     }
