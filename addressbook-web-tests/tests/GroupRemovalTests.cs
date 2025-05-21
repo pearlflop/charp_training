@@ -1,3 +1,4 @@
+using NUnit.Framework.Legacy;
 using OpenQA.Selenium;
 
 namespace WebAddressBookTests
@@ -19,7 +20,13 @@ namespace WebAddressBookTests
                 app.Groups.Create(Data);
             }
 
-            app.Groups.Remove(i);
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+            app.Groups.Remove(0);
+
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+
+            oldGroups.RemoveAt(0);
+            ClassicAssert.AreEqual(oldGroups, newGroups);
         }
     }
 }

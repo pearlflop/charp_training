@@ -38,7 +38,6 @@ public class ContactHelper : HelperBase
     private ContactHelper SubmitContactCreation()
     {
         driver.FindElement(By.XPath("//input[20]")).Click();
-        driver.Navigate().GoToUrl("http://localhost/addressbook/");
         return this;
     }
 
@@ -71,5 +70,26 @@ public class ContactHelper : HelperBase
     {
         driver.Navigate().GoToUrl("http://localhost/addressbook/edit.php?id=" + index + "");
         return this;
+    }
+
+    public List<ContactData> GetContactList()
+    {
+        List<ContactData> contacts = new List<ContactData>();
+        ICollection<IWebElement> rows = driver.FindElements(By.XPath("//tr[@name='entry']"));
+
+        foreach (IWebElement row in rows)
+        {
+            var elements = row.FindElements(By.TagName("td"));
+
+            if (elements.Count >= 3)
+            {
+                string lastName = elements[1].Text.Trim();
+                string firstName = elements[2].Text.Trim();
+
+                contacts.Add(new ContactData(firstName, lastName));
+            }
+        }
+
+        return contacts;
     }
 }

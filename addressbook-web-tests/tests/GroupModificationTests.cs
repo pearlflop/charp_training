@@ -1,3 +1,4 @@
+using NUnit.Framework.Legacy;
 using OpenQA.Selenium;
 
 namespace WebAddressBookTests
@@ -14,15 +15,23 @@ namespace WebAddressBookTests
             newData.Footer = null;
             Data.Header = null;
             Data.Footer = null;
-            var i = 1;
+            var i = 0;
 
             app.Navigation.GoToGroupsPage();
-            if (app.Groups.IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
+            if (app.Groups.IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + (i + 1) + "]")) == false)
             {
                 app.Groups.Create(Data);
             }
 
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+
             app.Groups.Modify(i, newData);
+
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+            oldGroups[0].Name = newData.Name;
+            oldGroups.Sort();
+            newGroups.Sort();
+            ClassicAssert.AreEqual(oldGroups, newGroups);
         }
     }
 }

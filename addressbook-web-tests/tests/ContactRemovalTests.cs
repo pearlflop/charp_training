@@ -1,3 +1,4 @@
+using NUnit.Framework.Legacy;
 using OpenQA.Selenium;
 
 namespace WebAddressBookTests;
@@ -17,6 +18,14 @@ public class ContactRemovalTests : AuthTestBase
             app.Contact.Create(contact);
         }
 
+        List<ContactData> oldContacts = app.Contact.GetContactList();
         app.Contact.Remove(i);
+
+
+        List<ContactData> newContacts = app.Contact.GetContactList();
+        oldContacts.RemoveAt(0);
+        oldContacts.Sort();
+        newContacts.Sort();
+        ClassicAssert.AreEqual(oldContacts, newContacts);
     }
 }
