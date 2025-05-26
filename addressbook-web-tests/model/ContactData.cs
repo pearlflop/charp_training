@@ -28,22 +28,25 @@ public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
 
     public override int GetHashCode()
     {
-        return FirstName.GetHashCode() ^ LastName.GetHashCode();
+        return (FirstName + LastName).GetHashCode();
     }
 
     public override string ToString()
     {
-        return FirstName + " " + LastName;
+        return $"{firstName} {lastName}";
     }
 
     public int CompareTo(ContactData other)
     {
-        if (object.ReferenceEquals(other, null))
+        if (other == null) return 1;
+
+        int result = LastName.CompareTo(other.LastName);
+        if (result == 0)
         {
-            return 1;
+            result = FirstName.CompareTo(other.FirstName);
         }
 
-        return firstName.CompareTo(other.FirstName) ^ lastName.CompareTo(other.FirstName);
+        return result;
     }
 
     public string FirstName
