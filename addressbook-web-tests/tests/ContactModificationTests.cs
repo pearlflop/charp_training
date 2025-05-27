@@ -11,16 +11,17 @@ namespace WebAddressBookTests
         {
             ContactData newData = new ContactData("qq", "bb");
             ContactData contact = new ContactData("aa", "cc");
-            var i = 27;
+            var i = 0;
 
             app.Navigation.GoToHomePage();
-            if (app.Contact.IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + i + "]")) == false)
+            if (app.Contact.IsElementPresent(By.XPath("(//input[@name='selected[]'])[" + (i + 1) + "]")) == false)
 
             {
                 app.Contact.Create(contact);
             }
 
             List<ContactData> oldContacts = app.Contact.GetContactList();
+
             app.Contact.Modify(i, newData);
             List<ContactData> newContacts = app.Contact.GetContactList();
             oldContacts[0].FirstName = newData.FirstName;

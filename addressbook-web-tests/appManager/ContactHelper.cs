@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 
 namespace WebAddressBookTests;
@@ -68,7 +69,14 @@ public class ContactHelper : HelperBase
 
     public ContactHelper EditContactPage(int index)
     {
-        driver.Navigate().GoToUrl("http://localhost/addressbook/edit.php?id=" + index + "");
+        ReadOnlyCollection<IWebElement> rows = driver.FindElements(By.XPath("//tr[@name='entry']"));
+
+        IWebElement row = rows[index];
+
+        string contactId = row.FindElement(By.CssSelector("input[type='checkbox']")).GetAttribute("value");
+
+        driver.Navigate().GoToUrl($"http://localhost/addressbook/edit.php?id={contactId}");
+
         return this;
     }
 
