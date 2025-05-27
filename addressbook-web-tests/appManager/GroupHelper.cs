@@ -101,10 +101,25 @@ public class GroupHelper : HelperBase
             ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group"));
             foreach (IWebElement element in elements)
             {
-                groupCache.Add(new GroupData(element.Text)
+                groupCache.Add(new GroupData(null)
                 {
                     Id = element.FindElement(By.TagName("input")).GetAttribute("value")
                 });
+            }
+
+            string allGroupsNames = driver.FindElement(By.CssSelector("div#content form")).Text;
+            string[] parts = allGroupsNames.Split('\n');
+            int shift = groupCache.Count - parts.Length;
+            for (int i = 0; i < groupCache.Count; i++)
+            {
+                if (i < shift)
+                {
+                    groupCache[i].Name = "";
+                }
+                else
+                {
+                    groupCache[i].Name = parts[i - shift].Trim();
+                }
             }
         }
 
