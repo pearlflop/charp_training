@@ -13,7 +13,11 @@ namespace WebAddressBookTests
             group.Footer = "n";
 
             List<GroupData> oldGroups = app.Groups.GetGroupList();
+
             app.Groups.Create(group);
+
+            ClassicAssert.AreEqual(oldGroups.Count + 1, app.Groups.getGroupCount());
+
             List<GroupData> newGroups = app.Groups.GetGroupList();
             oldGroups.Add(group);
             oldGroups.Sort();
@@ -31,6 +35,9 @@ namespace WebAddressBookTests
             List<GroupData> oldGroups = app.Groups.GetGroupList();
 
             app.Groups.Create(group);
+
+            ClassicAssert.AreEqual(oldGroups.Count + 1, app.Groups.getGroupCount());
+
             List<GroupData> newGroups = app.Groups.GetGroupList();
             oldGroups.Add(group);
             oldGroups.Sort();
@@ -48,6 +55,9 @@ namespace WebAddressBookTests
             List<GroupData> oldGroups = app.Groups.GetGroupList();
 
             app.Groups.Create(group);
+
+            ClassicAssert.AreEqual(oldGroups.Count + 1, app.Groups.getGroupCount());
+
             List<GroupData> newGroups = app.Groups.GetGroupList();
             oldGroups.Add(group);
             oldGroups.Sort();
