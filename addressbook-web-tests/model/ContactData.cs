@@ -103,6 +103,28 @@ public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
         set { allEmails = value; }
     }
 
+    public string AllNames
+    {
+        get
+        {
+            if (AllNames != null)
+            {
+                return AllNames.Trim();
+            }
+            else
+            {
+                return (CleanUpNames(FirstName) + CleanUpNames(LastName)).Trim();
+            }
+        }
+        set { AllNames = value; }
+    }
+
+    public string AllViewPhones { get; set; }
+
+    public string AllViewEmails { get; set; }
+
+    public string AllViewNames { get; set; }
+
 
     private string CleanUpPhone(string phone)
     {
@@ -122,6 +144,16 @@ public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
         }
 
         return Regex.Replace(email, "[ -()]", "") + Environment.NewLine;
+    }
+
+    private string CleanUpNames(string names)
+    {
+        if (names == null || names == "")
+        {
+            return "";
+        }
+
+        return Regex.Replace(names, "[ -()]", "") + Environment.NewLine;
     }
 
     public string Id { get; set; }

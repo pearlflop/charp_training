@@ -151,7 +151,7 @@ public class ContactHelper : HelperBase
         string email1 = driver.FindElement(By.Name("email")).GetAttribute("value");
         string email2 = driver.FindElement(By.Name("email2")).GetAttribute("value");
         string email3 = driver.FindElement(By.Name("email3")).GetAttribute("value");
-        
+
         return new ContactData(firstName, lastName)
         {
             Address = address,
@@ -162,6 +162,59 @@ public class ContactHelper : HelperBase
             Email2 = email2,
             Email3 = email3
         };
+    }
+
+    public ContactData GetContactInformationFromViewForm(int index)
+    {
+        manager.Navigation.GoToHomePage();
+        InitContactViewForm(index);
+
+        string content = driver.FindElement(By.Id("content")).Text;
+
+        string fullName = content.Split('\n')[0].Trim();
+
+        string firstName = "";
+        string lastName = "";
+        var nameParts = fullName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (nameParts.Length == 2)
+        {
+            firstName = nameParts[0];
+            lastName = nameParts[1];
+        }
+        else if (nameParts.Length == 1)
+        {
+            firstName = nameParts[0];
+        }
+        else if (nameParts.Length > 2)
+        {
+            firstName = nameParts[0];
+            lastName = string.Join(" ", nameParts.Skip(1));
+        }
+
+        string address = content.Split('\n')[1].Trim();
+
+        var phoneMatches = Regex.Matches(content, @"^(H|M|W):\s*.*", RegexOptions.Multiline);
+        string allViewPhones = string.Join(Environment.NewLine,
+            phoneMatches.Cast<Match>().Select(m => m.Value.Trim())) + Environment.NewLine;
+
+        var emailMatches = Regex.Matches(content, @"[\w\.-]+@[\w\.-]+\.\w+");
+        string allViewEmails = string.Join(Environment.NewLine,
+            emailMatches.Cast<Match>().Select(m => m.Value.Trim())) + Environment.NewLine;
+
+        return new ContactData(firstName, lastName)
+        {
+            Address = address,
+            AllViewNames = fullName + Environment.NewLine,
+            AllViewPhones = allViewPhones,
+            AllViewEmails = allViewEmails
+        };
+    }
+
+
+    public void InitContactViewForm(int index)
+    {
+        driver.FindElements(By.Name("entry"))[index].FindElements(By.TagName("td"))[6].FindElement(By.TagName("a"))
+            .Click();
     }
 
     public int GetNumberOfResults()
